@@ -26,7 +26,9 @@ const UserItem = () => {
               <AvatarImage src={user?.imageUrl} />
             </Avatar>
             <span className="text-start font-medium line-clamp-1">
-              {user?.fullName}&apos;s Jottion
+              {!!user?.firstName
+                ? `${user?.firstName}'s Jottion`
+                : `${user?.username}'s Jottion`}
             </span>
           </div>
           <ChevronsLeftRight className="shrink-0 rotate-90 ml-2 text-muted-foreground w-3 h-3 mr-10" />

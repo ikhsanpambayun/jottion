@@ -28,6 +28,8 @@ const DocumentsPage = () => {
     });
   };
 
+  console.log(user?.username);
+
   return (
     <div className="h-full flex flex-col items-center justify-center space-y-4">
       <Image
@@ -46,7 +48,9 @@ const DocumentsPage = () => {
         className="hidden dark:block"
       ></Image>
       <h2 className="text-lg font-medium">
-        Welcome to {user?.firstName}&apos;s Jottion.
+        {!!user?.firstName
+          ? `Welcome to ${user?.firstName}'s Jottion.`
+          : `Welcome to ${user?.username}'s Jottion.`}
       </h2>
       <Button onClick={onCreate}>
         <PlusCircle className="w-4 h-4 mr-2" />
